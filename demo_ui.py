@@ -179,7 +179,7 @@ with tab1:
                 if result["status"] == "success":
                     st.session_state.last_result = result
 
-                    st.success("✓ Calculation Complete", icon="✓")
+                    st.success("✓ Calculation Complete")
 
                     cols = st.columns(2)
                     with cols[0]:
@@ -202,10 +202,10 @@ with tab1:
                     st.write(f"_{result['result']['explanation']}_")
 
                 else:
-                    st.error(f"Error: {result.get('error', 'Unknown error')}", icon="✗")
+                    st.error(f"Error: {result.get('error', 'Unknown error')}")
 
             except Exception as e:
-                st.error(f"Error: {str(e)}", icon="✗")
+                st.error(f"Error: {str(e)}")
 
 # ============================================================================
 # TAB 2: ROUTE OPTIMIZER
@@ -252,7 +252,7 @@ with tab2:
                     if result["status"] == "success":
                         st.session_state.last_result = result
 
-                        st.success("✓ Route Optimized!", icon="✓")
+                        st.success("✓ Route Optimized!")
 
                         cols = st.columns(3)
                         with cols[0]:
@@ -273,10 +273,10 @@ with tab2:
                         st.write(f"_{result['result']['explanation']}_")
 
                     else:
-                        st.error(f"Error: {result.get('error', 'Unknown error')}", icon="✗")
+                        st.error(f"Error: {result.get('error', 'Unknown error')}")
 
                 except Exception as e:
-                    st.error(f"Error: {str(e)}", icon="✗")
+                    st.error(f"Error: {str(e)}")
 
 # ============================================================================
 # TAB 3: FUEL COST CALCULATOR
@@ -329,7 +329,7 @@ with tab3:
                 if result["status"] == "success":
                     st.session_state.last_result = result
 
-                    st.success("✓ Cost Calculated!", icon="✓")
+                    st.success("✓ Cost Calculated!")
 
                     cols = st.columns(3)
                     with cols[0]:
@@ -357,10 +357,10 @@ with tab3:
                     st.info(breakdown)
 
                 else:
-                    st.error(f"Error: {result.get('error', 'Unknown error')}", icon="✗")
+                    st.error(f"Error: {result.get('error', 'Unknown error')}")
 
             except Exception as e:
-                st.error(f"Error: {str(e)}", icon="✗")
+                st.error(f"Error: {str(e)}")
 
 # ============================================================================
 # TAB 4: NATURAL LANGUAGE QUERY
@@ -398,7 +398,7 @@ with tab4:
                 st.session_state.last_result = result
 
                 if result["status"] == "success":
-                    st.success(f"✓ Query Understood ({result['type'].title()})", icon="✓")
+                    st.success(f"Query Understood ({result['type'].title()})")
 
                     st.write("**Query Type:** " + result["type"].title())
 
@@ -424,10 +424,10 @@ with tab4:
                             st.write(f"• _{example}_")
 
                 else:
-                    st.error(f"Error: {result.get('error', 'Unknown error')}", icon="✗")
+                    st.error(f"Error: {result.get('error', 'Unknown error')}")
 
             except Exception as e:
-                st.error(f"Error: {str(e)}", icon="✗")
+                st.error(f"Error: {str(e)}")
 
     elif ask_button:
         st.warning("Please enter a query first")
