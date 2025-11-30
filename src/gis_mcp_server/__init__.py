@@ -3,6 +3,6 @@
 __version__ = "0.1.0"
 __author__ = "GIS Team"
 
-from .server import GISMCPServer
+from .server import server, get_server
 
-__all__ = ["GISMCPServer"]
+__all__ = ["server", "get_server"]
