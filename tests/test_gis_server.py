@@ -1,6 +1,11 @@
 """Tests for GIS MCP Server."""
 
+import sys
+from pathlib import Path
 import pytest
+
+# Add parent directory to path so we can import src
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.gis_mcp_server.tools.distance_calculator import DistanceCalculator
 
@@ -50,8 +55,8 @@ class TestGISMCPServer:
 
     def test_server_initialization(self) -> None:
         """Test server can be initialized."""
-        from src.gis_mcp_server import GISMCPServer
+        from src.gis_mcp_server import server
 
-        server = GISMCPServer()
         assert server is not None
-        assert server.server is not None
+        # Verify that core tools are defined
+        assert hasattr(server, 'call_tool')
